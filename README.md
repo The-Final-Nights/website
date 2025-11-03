@@ -7,4 +7,4 @@ you'll have to set up the server tracker yourself, the .py source file is includ
 
 
 # Important Note
-this file isnt very 'clean', and there are redundant things left over from the main /tg/ website-v2 such as serverinfo.js and gamebanner stuff that was refactored. YMMV
+this repo isnt very 'clean', and there are redundant things left over from the main /tg/ website-v2 such as serverinfo.js and gamebanner stuff that was refactored. YMMV
