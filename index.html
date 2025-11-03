@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Final Nights</title>
+    <meta name="description" content="Remember, wherever we go, it is the blood of Caine which makes our fate...">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/redesign.css">
+    <script defer src="/js/data-panel.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon"/>
+  </head>
+  <body data-color-scheme="dark" class="bg-black">
+    <div class="bg-fade-in"></div>
+    <canvas id="dust-canvas"></canvas>
+    <script src="./js/background.js"></script>
+    <header>
+      
+      <nav class="flex space-around">
+        
+        <menu>
+    
+          
+            <li>
+              <a target='_blank' rel='noopener noreferrer' href="https://forums.thefinalnights.com/index.php">Forums</a>
+              
+            </li>
+          
+            <li>
+              <a target='_blank' rel='noopener noreferrer' href="https://ko-fi.com/A0A11G071H">Donate</a>
+              
+            </li>
+          
+            <li>
+              <a target='_blank' rel='noopener noreferrer' href="https://discord.gg/jR8zbCj5hP">Discord</a>
+              
+            </li>
+          
+            <li>
+              <a target='_blank' rel='noopener noreferrer' href="https://thefinalnights.com/wiki/">Wiki</a>
+              
+            </li>
+          
+            <li>
+              <a href="#">Dev</a>
+              
+                
+        <menu>
+          
+            <li>
+              <a target='_blank' rel='noopener noreferrer' href="https://github.com/The-Final-Nights/The-Final-Nights">The Final Nights GitHub</a>
+              
+            </li>
+          
+            <li>
+              <a target='_blank' rel='noopener noreferrer' href="https://github.com/DarkPack13/SecondCity">Rebase Project</a>
+              
+            </li>
+          
+        </menu>
+      
+              
+            </li>
+          
+        </menu>
+      
+      </nav>
+    </header>
+    <i class="fa fas fa-pause" id="animationControl"></i>
+    <main>
+      <div id="main-title-container">
+        <div id="intro-text">these are...</div>
+        <div id="main-title" class="title-text-shadow">The Final Nights</div>
+      </div>
+      <section id="alerts" class="invisible mb-4">
+        
+          
+            <div class="mt-4" id="alerts">
+              <span>📢<button id="alertMainButton" type="button" style="
+                  padding: 0.5rem 0.75rem;
+                  border: 1px solid var(--bd-muted);
+                  border-radius: var(--bd-radius);
+                  background: var(--bg-muted);
+                  color: var(--default);
+                  cursor: pointer;
+                  text-align: center;
+                "><a style="color:white; text-shadow: 0 0 5px black; font-style: italic;" href="https://github.com/DarkPack13/SecondCity" rel="noreferrer noopener" target="_blank">Check out the Rebase Project!</a></button></span>
+              
+                <i class="fa fa-times dismiss" title="Dismiss this alert"></i>
+              
+            </div>
+          
+        
+          
+        
+          
+        
+      </section>
+      <section id="about">
+        <h1 class="section-title" id="about">What is Space Station 13?</h1>
+        <i class="fa fa-times dismiss" title="Dismiss this section"></i>
+        <article class="pb-0">
+          <p>Space Station 13 is a paranoia-laden round-based roleplaying game set against the backdrop of a nonsensical, metal
+            death trap masquerading as a space station, with charming spritework designed to represent the sci-fi setting and its
+            dangerous undertones.</p> 
+          <p>The Final Nights is a Heavy Text-Based Roleplay fork of /tg/ Station 13, set in the <a href="https://www.paradoxinteractive.com/games/world-of-darkness/about" target="_blank">World of Darkness</a> universe.</p>
+          <nav class="space-around" id="about-links">
+            <menu class="space-around">
+              <li class="py-0 px-1 m-0 centered">
+                <button id="getByondButton" type="button" style="
+                  padding: 0.5rem 0.75rem;
+                  border: 1px solid var(--bd-muted);
+                  border-radius: var(--bd-radius);
+                  background: var(--bg-muted);
+                  color: var(--default);
+                  cursor: pointer;
+                "><a href="https://www.byond.com/download/" rel="noreferrer noopener" target="_blank">Get Byond</a></button>
+                
+              </li>
+            </menu>
+          </nav>
+        </article>
+      </section>
+      <section id="servers" class="mt-4">
+        <h1 class="section-title">Status Tracker</h1>
+        <span class="playercount hidden"></span>
+        <div style="display: none;">
+          <div id="data-panel"></div>
+        </div>
+
+        <div class="gamebanners">
+          
+            <a class="gamebanner underway" data-server="manuel" id="manuel" href="byond://gehenna.thefinalnights.com:1337">
+              <div class="icons">
+                <i class="fa fas fa-fw fa-globe" id="terry-hub" title="This server is on the byond hub"></i>
+                <i class="fa fas fa-fw fa-shield-halved hidden" id="terry-bunker" title="This server is not accepting new players"></i>
+              </div>
+              <div class="flex start">
+                <span class="address mr-1">gehenna.thefinalnights.com:1337</span>
+                <span class="revision">&nbsp;</span>
+              </div>
+              <span class="name">The Final Nights</span>
+              <span class="version" id="gamebanner-countdown">Loading...</span>
+              <span class="map" id="gamebanner-map">&nbsp;</span>
+              <span class="status" id="gamebanner-players">&nbsp;</span>
+            </a>
+          
+        </div>
+      </section>
+      <section id="banner" class="mt-4" style="padding:2%;">
+        <h1 class="section-title">Gameplay</h1>
+        <img width="512" height="512" style="border:1px solid #707070;" src="" />
+        <script>
+        (function () {
+          const img = document.querySelector('#banner img');
+          if (!img) return;
+          const n = Math.floor(Math.random() * 20) + 1;
+          img.src = `/slideshow/${n}.png`;
+        })();
+        </script>
+      </section>
+    </main>
+    <footer>
+      /tg/station 13 - v.1.0.10 -
+      <a href="https://github.com/tgstation-operations/website-v2" target="_blank">Source Code</a><br> Site design based off of work done by
+      <a href="https://mozi-h.de/" target="_blank">mozi_h</a><br>
+      <a href="#" class="clearSettings">Clear Settings</a>
+    </footer>
+    <div id="space-bg-container" class="">
+      <div class="bg-space space-1"></div>
+      <div class="bg-space space-2"></div>
+      <div class="bg-space space-2-blue"></div>
+      <div class="bg-space space-2-black"></div>
+      <div class="bg-space space-2-red"></div>
+      <div class="bg-space space-2-yellow"></div>
+      <div class="bg-space space-3"></div>
+    </div>
+    <script defer src="/assets/js/dismiss.js"></script>
+    <script defer src="/assets/js/pause.js"></script>
+    <script>
+      setInterval(function() {
+        const dataPanel = document.getElementById('data-panel');
+        if (!dataPanel) return;
+        const countdownTimer = dataPanel.querySelector('#countdown-timer');
+        const gamebannerCountdown = document.getElementById('gamebanner-countdown');
+        if (countdownTimer && gamebannerCountdown) {
+          gamebannerCountdown.textContent = countdownTimer.textContent;
+        }
+        const mapText = dataPanel.textContent.match(/Live data from (.+?)\d+/);
+        const gamebannerMap = document.getElementById('gamebanner-map');
+        if (mapText && gamebannerMap) {
+          gamebannerMap.textContent = mapText[1].trim();
+        }
+        const playersText = dataPanel.textContent.match(/(\d+) active players/);
+        const gamebannerPlayers = document.getElementById('gamebanner-players');
+        if (playersText && gamebannerPlayers) {
+          gamebannerPlayers.textContent = playersText[1] + ' players online';
+        }
+        const banner = document.getElementById('tfn');
+        if (banner && countdownTimer) {
+          banner.classList.remove('loading');
+        }
+      }, 100);
+    </script>
+    <script defer src="./js/main-title.js"></script>
+    <!-- This page `/` was built on 2025-10-22T23:58:21.820Z -->
+  </body>
+</html>
