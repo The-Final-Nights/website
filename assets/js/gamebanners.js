@@ -1,5 +1,5 @@
 //const url = "https://tgstation13.org/serverinfo.json";
-// Use data.php to bypass file permission issues
+// Use data.php if you don't expose a json endpoint
 const url = "/data.php";
 async function getData() {
   try {
@@ -9,15 +9,12 @@ async function getData() {
     }
     const data = await response.json();
     let players = 0;
-    
-    // Handle both formats: single server object or array of servers
+
     if (Array.isArray(data.servers)) {
-      // Original format: { servers: [...] }
       data.servers.forEach((server) => {
         players += updateBanners(server);
       });
     } else if (data.identifier) {
-      // Single server object format
       players += updateBanners(data);
     }
     
@@ -30,11 +27,7 @@ async function getData() {
 function updateBanners(server) {
   const banner = document.getElementById(`${server.identifier}`);
   let errortext = "Connection Error!";
-  
-  // Handle both nested format (server.data) and flat format (server directly contains game data)
   const gameData = server.data || server;
-  
-  // Check if we have valid data
   if (!gameData || gameData.hasOwnProperty("ERROR")) {
     if (gameData && gameData.errortext) {
       errortext = gameData.errortext;
@@ -42,8 +35,6 @@ function updateBanners(server) {
     setBannerToErrorMode(banner, errortext);
     return 0;
   }
-  
-  // Verify required fields exist
   if (!gameData.hasOwnProperty("players") || !gameData.hasOwnProperty("version")) {
     setBannerToErrorMode(banner, errortext);
     return 0;
